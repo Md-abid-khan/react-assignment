@@ -1,9 +1,10 @@
 import React from 'react';
 import imageLogo from "../../../git/B11A08-router-warrior/C001-assets/logo.png"
-import FbLogo from  "../../../DocPic/SM Logo/facebook.png"
+import FbLogo from "../../../DocPic/SM Logo/facebook.png"
 import linkedInLogo from "../../../DocPic/SM Logo/linkedin.png"
 import XLogo from "../../../DocPic/SM Logo/twitter.png"
 import youtubeLogo from "../../../DocPic/SM Logo/youtube.png"
+import { Link } from 'react-router';
 
 const Footer = () => {
     return (
@@ -16,10 +17,12 @@ const Footer = () => {
                     </div>
                 </div>
                 <nav className="grid grid-flow-col gap-4">
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
+                    <ul className="menu menu-horizontal p-2 mx-2">
+                        <li><a><Link to={"/"}>Home</Link></a></li>
+                        <li><a><Link to={"/bookmarks"}>My Bookings</Link></a></li>
+                        <li><a>Blog</a></li>
+                        <li><a>Contact Us</a></li>
+                    </ul>
                 </nav>
                 <div className='border-t-2 w-3/4 border-dotted'>
 

@@ -2,17 +2,20 @@ import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import infoIcon from "../../../DocPic/information.png"
 import iconR from "../../../DocPic/registered.png"
+import {addItemToLS} from "../LocalStorage.js"
 
 const DoctorDetails = () => {
     const data = useLoaderData();
     const { id } = useParams();
     const parseId = parseInt(id);
-    // console.log(parseId);
-    // console.log(id);
-    // console.log(data);
     const selectedDoctor = data.find(d => d.id === parseId)
-    // console.log(selectedDoctor);
-    // const { button, education, experience, id, image, name, registrationNumber, speciality } = selectedDoctor;
+
+
+    const handleAppoinrment = (id)=>{
+        addItemToLS(id)
+
+    }
+   ;
     return (
         <div>
             {/* {data.length} */}
@@ -21,11 +24,11 @@ const DoctorDetails = () => {
                 <h1 className='font-bold mb-2'>Doctor’s Profile Details</h1>
                 <p className='text-center'>Lorem ipsum dolor sit amet consectetur. Sit enim blandit orci tortor amet ut. Suscipit sed est fermentum magna. Quis vitae tempus <br /> facilisis turpis imperdiet mattis donec dignissim volutpat.</p>
             </div>
-            <div className='my-10 bg-white mx-10 py-10 rounded-2xl flex justify-center gap-5 '>
+            <div className='my-10 bg-white mx-10 py-10 rounded-2xl flex justify-start gap-5 '>
                 <div>
-                    <img src={selectedDoctor.image} alt="" />
+                    <img className='h-90 ml-10' src={selectedDoctor.image} alt="" />
                 </div>
-                <div className='flex flex-col gap-3'>
+                <div className='flex flex-col gap-5'>
                     <h1 className='font-bold text-2xl'>{selectedDoctor.name}</h1>
                     <p >{selectedDoctor.education}</p>
                     <p>Working at</p>
@@ -35,7 +38,7 @@ const DoctorDetails = () => {
                     <div className='border-t-2 border-dotted '></div>
                     <div className='flex gap-2 '>
                         <p className='font-bold'>Ability :</p>
-                            <div className=''> {selectedDoctor.availabity.map(ab => ab )}</div>
+                            <div> {selectedDoctor.availabity.map(ab => ab )}</div>
                         
                     </div>
                     <div > <span className='font-bold'> Consultation Fee: </span>  <span className='text-blue-800'>Taka : {selectedDoctor.fee}</span> (incl. Vat) <span className='text-blue-400'>perconsuitation
@@ -68,7 +71,8 @@ const DoctorDetails = () => {
                 </div>
                 <div className='flex flex-col items-center'>
 
-                <button className='btn rounded-4xl w-7/8 '>
+                <button className='btn rounded-4xl w-7/8' onClick={()=>{handleAppoinrment(id)}}>
+
                     Book Appointment Now
 
                 </button>
