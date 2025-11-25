@@ -2,7 +2,8 @@ import React, { Suspense } from 'react';
 import Doctor from './Doctor/Doctor';
 import CountDown from '../CountDown/CountDown';
 
-const Doctors = ({data}) => {
+
+const Doctors = ({data }) => {
     return (
         <div>
             <div className='flex flex-col items-center'>
@@ -17,6 +18,7 @@ const Doctors = ({data}) => {
                 </div>
                 <div>
                     <CountDown></CountDown>
+                    
                 </div>
             </div>
         </div>

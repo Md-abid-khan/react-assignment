@@ -2,7 +2,8 @@ import React from 'react';
 import IconR from "../../../../DocPic/registered.png"
 import { Link } from 'react-router';
 
-const Doctor = ({ doctor }) => {
+
+const Doctor = ({ doctor   }) => {
     const { button, education, experience, id, image, name, registrationNumber, speciality } = doctor;
     return (
         <div className=''>
@@ -25,7 +26,8 @@ const Doctor = ({ doctor }) => {
                     <p className='flex gap-2 items-center'> <img src={IconR} alt="IconR" className='h-5' /> {registrationNumber}</p>
                 </div>
                     <Link className='px-5' to={`/doctordetails/${id}`}>
-                    <button className="btn w-full rounded-4xl mb-5 " >{button}</button>
+                    <button className="btn w-full rounded-4xl mb-5 "   >{button}</button>
+                    
                     </Link>
             </div>
 

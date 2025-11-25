@@ -38,7 +38,7 @@ const DoctorDetails = () => {
                     <div className='border-t-2 border-dotted '></div>
                     <div className='flex gap-2 '>
                         <p className='font-bold'>Ability :</p>
-                            <div> {selectedDoctor.availabity.map(ab => ab )}</div>
+                            <div className=''> {selectedDoctor.availabity.map(ab => ab  )}</div>
                         
                     </div>
                     <div > <span className='font-bold'> Consultation Fee: </span>  <span className='text-blue-800'>Taka : {selectedDoctor.fee}</span> (incl. Vat) <span className='text-blue-400'>perconsuitation

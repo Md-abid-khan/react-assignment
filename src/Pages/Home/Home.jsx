@@ -4,9 +4,16 @@ import Banner from '../../Components/Banner/Banner';
 import Doctors from '../../Components/Doctors/Doctors';
 import { useLoaderData } from 'react-router';
 
+
 const Home = () => {
     const data = useLoaderData();
     // console.log(data);
+
+   
+
+    
+
+
     return (
         <div>
             {/* <div className="bg-base-200 border-2 rounded-2xl mx-5 border-amber-200 mt-5">
@@ -31,7 +38,7 @@ const Home = () => {
                     </div>
             </div> */}
             <Banner></Banner>
-            <Doctors data={data}></Doctors>
+            <Doctors  data={data}></Doctors>
 
         </div>
     );

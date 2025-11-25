@@ -16,8 +16,8 @@ const Header = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-6 shadow mx-2">
                             <li><a><Link to={"/"}>Home</Link></a></li>
                             <li><a><Link to={"/bookmarks"}>My Bookings</Link></a></li>
-                            <li><a> <Link to={"/blogs"}></Link>Blog</a></li>
-                            <li><a>Contact Us</a></li>
+                            <li><a> <Link to={"/blogs"}>Blog</Link></a></li>
+                            <li><a> <Link to={"/contactUs"}>Contact Us</Link> </a></li>
                         </ul>
                     </div>
                     <div className='flex'>
@@ -29,8 +29,8 @@ const Header = () => {
                     <ul className="menu menu-horizontal p-2 mx-2">
                         <li><a><Link to={"/"}>Home</Link></a></li>
                         <li><a><Link to={"/bookmarks"}>My Bookings</Link></a></li>
-                        <li><a> <Link to={"/blogs"}></Link>Blog</a></li>
-                        <li><a>Contact Us</a></li>
+                        <li><a> <Link to={"/blogs"}>Blog</Link></a></li>
+                        <li><a> <Link to={"/contactUs"}>Contact Us</Link> </a></li>
                     </ul>
                 </div>
                 <div className="navbar-end">

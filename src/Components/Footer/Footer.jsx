@@ -4,7 +4,7 @@ import FbLogo from "../../../DocPic/SM Logo/facebook.png"
 import linkedInLogo from "../../../DocPic/SM Logo/linkedin.png"
 import XLogo from "../../../DocPic/SM Logo/twitter.png"
 import youtubeLogo from "../../../DocPic/SM Logo/youtube.png"
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 const Footer = () => {
     return (
@@ -18,10 +18,11 @@ const Footer = () => {
                 </div>
                 <nav className="grid grid-flow-col gap-4">
                     <ul className="menu menu-horizontal p-2 mx-2">
-                        <li><a><Link to={"/"}>Home</Link></a></li>
+                        <li><a><NavLink to={"/"}>Home</NavLink></a></li>
                         <li><a><Link to={"/bookmarks"}>My Bookings</Link></a></li>
-                        <li><a> <Link to={"/blogs"}></Link>Blog</a></li>
-                        <li><a>Contact Us</a></li>
+                        <li><a ><Link to={"/blogs"}>Blog</Link></a></li>
+                        
+                        <li><a> <Link to={"/contactUs"}>Contact Us</Link> </a></li>
                     </ul>
                 </nav>
                 <div className='border-t-2 w-3/4 border-dotted'>
@@ -29,10 +30,10 @@ const Footer = () => {
                 </div>
                 <nav>
                     <div className="grid grid-flow-col gap-4">
-                        <a><img className='h-10' src={FbLogo} alt="facebook Logo" /></a>
-                        <a><img className='h-10' src={XLogo} alt="X logo" /> </a>
-                        <a><img className='h-10' src={linkedInLogo} alt="LinkedIn Logo" /> </a>
-                        <a><img className='h-10' src={youtubeLogo} alt="Youtube Loge" /></a>
+                        <a href='https://www.facebook.com/' target='_blank'><img className='h-10' src={FbLogo} alt="facebook Logo" /></a>
+                        <a href='https://x.com/' target='_blank'><img className='h-10' src={XLogo} alt="X logo" /> </a>
+                        
+                        <a href='https://www.youtube.com/' target='_blank'><img className='h-10' src={youtubeLogo} alt="Youtube Loge" /></a>
                     </div>
                 </nav>
 
