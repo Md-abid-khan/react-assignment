@@ -5,9 +5,9 @@ import { Outlet } from 'react-router';
 
 const Root = () => {
     return (
-        <div>
+        <div className='bg-gray-200'>
             <Header></Header>
-            <Outlet></Outlet>
+            <Outlet ></Outlet>
             <Footer></Footer>
         </div>
     );

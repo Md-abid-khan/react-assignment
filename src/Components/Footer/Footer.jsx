@@ -8,7 +8,7 @@ import youtubeLogo from "../../../DocPic/SM Logo/youtube.png"
 const Footer = () => {
     return (
         <div>
-            <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded p-10">
+            <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded py-10">
                 <div>
                     <div className='flex'>
                         <img className='h-10 items-center' src={imageLogo} alt="Company Logo" />
@@ -21,7 +21,7 @@ const Footer = () => {
                     <a className="link link-hover">Jobs</a>
                     <a className="link link-hover">Press kit</a>
                 </nav>
-                <div className='border-t-2 w-200 border-dotted'>
+                <div className='border-t-2 w-3/4 border-dotted'>
 
                 </div>
                 <nav>

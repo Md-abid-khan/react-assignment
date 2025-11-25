@@ -5,8 +5,8 @@ const Banner = () => {
     return (
         <div>
             <div>
-                        <div className="bg-base-200 border-2 rounded-2xl mx-5 border-amber-200 mt-5">
-                            <div className="hero-content text-center">
+                        <div className="bg-base-200 border-2 rounded-2xl mx-5 border-amber-200 mt-5 flex flex-col items-center.">
+                            <div className=" text-center">
                                 <div className="">
                                     <h1 className="text-5xl font-bold mt-10">Dependable Care, Backed by Trusted Professionals.</h1>
                                     <p className="py-6">

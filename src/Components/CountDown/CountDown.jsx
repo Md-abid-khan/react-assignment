@@ -6,10 +6,10 @@ import stuffImage from "../../../git/B11A08-router-warrior/C001-assets/success-s
 
 const CountDown = () => {
     return (
-        <div>
+        <div className='mb-10 flex flex-col items-center'>
             <h1 className='text-3xl mt-15 mb-5 font-bold'>We Provide Best Medical Services</h1>
             <p className='mb-10'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience. </p>
-            <div className='flex justify-around'>
+            <div className='flex gap-5'>
                 <div className='w-62 h-60 bg-blue-400  rounded-2xl flex flex-col p-10'>
                     <img className='h-15 w-15' src={doctorImage} alt="" />
                     <div></div>
