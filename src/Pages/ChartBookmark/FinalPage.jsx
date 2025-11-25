@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
 import { getItemFromLS } from '../LocalStorage';
 import Bookings from '../../Components/Booking/Bookings';
+import Chart from '../../Components/Charts/Chart';
 
 const FinalPage = () => {
     // const {id}  = useParams();
@@ -47,6 +48,10 @@ const FinalPage = () => {
     return (
         <div>
             {/* <Charts></Charts> */}
+            <div className='flex flex-col items-center bg-white mx-60 p-10 rounded-2xl'>
+                <Chart appointments={appointments}></Chart>
+            </div>
+            
             
             <div>
                 <div className='flex flex-col items-center'>

@@ -5,6 +5,7 @@ import Home from "../Pages/Home/Home";
 import { Component } from "react";
 import DoctorDetails from "../Pages/DoctorDetails/DoctorDetails";
 import FinalPage from "../Pages/ChartBookmark/FinalPage";
+import BLog from "../Pages/Blogs/BLog";
 
 
 const router = createBrowserRouter([
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
                 path: "/finalpage",
                  loader: () => fetch("DoctorJSON.json"),
                 Component : FinalPage
+            },
+            {
+                path:"/blogs",
+                Component: BLog
             }
         ]
     },

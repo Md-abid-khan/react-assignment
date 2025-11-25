@@ -20,7 +20,7 @@ const Footer = () => {
                     <ul className="menu menu-horizontal p-2 mx-2">
                         <li><a><Link to={"/"}>Home</Link></a></li>
                         <li><a><Link to={"/bookmarks"}>My Bookings</Link></a></li>
-                        <li><a>Blog</a></li>
+                        <li><a> <Link to={"/blogs"}></Link>Blog</a></li>
                         <li><a>Contact Us</a></li>
                     </ul>
                 </nav>
