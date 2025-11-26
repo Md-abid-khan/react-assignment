@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import imageLogo from "../../../git/B11A08-router-warrior/C001-assets/logo.png"
 import FbLogo from "../../../DocPic/SM Logo/facebook.png"
 import linkedInLogo from "../../../DocPic/SM Logo/linkedin.png"
@@ -7,6 +7,7 @@ import youtubeLogo from "../../../DocPic/SM Logo/youtube.png"
 import { Link, NavLink } from 'react-router';
 
 const Footer = () => {
+     const [active , setActive] = useState('');
     return (
         <div>
             <footer className="footer footer-horizontal footer-center bg-base-200 text-base-content rounded py-10">
@@ -18,11 +19,11 @@ const Footer = () => {
                 </div>
                 <nav className="grid grid-flow-col gap-4">
                     <ul className="menu menu-horizontal p-2 mx-2">
-                        <li><a><NavLink to={"/"}>Home</NavLink></a></li>
-                        <li><a><Link to={"/bookmarks"}>My Bookings</Link></a></li>
-                        <li><a ><Link to={"/blogs"}>Blog</Link></a></li>
+                        <Link to={"/"}><li className='rounded-sm' onClick={()=> setActive("Home")} style={{backgroundColor: active === "Home" ? "blue" : ""}}><a>Home</a></li></Link>
+                        <Link to={"/bookmarks"}><li className='rounded-sm' onClick={()=> setActive("My Bookings")} style={{backgroundColor: active === "My Bookings" ? "blue" : ""}}><a>My Bookings</a></li></Link>
+                        <Link to={"/blogs"}><li className='rounded-sm' onClick={()=> setActive("Blog")} style={{backgroundColor: active === "Blog" ? "blue" : ""}}><a> Blog</a></li></Link>
                         
-                        <li><a> <Link to={"/contactUs"}>Contact Us</Link> </a></li>
+                        <Link to={"/contactUs"}><li className='rounded-sm' onClick={()=> setActive("Contact Us")} style={{backgroundColor: active === "Contact Us" ? "blue" : ""}}><a> Contact Us </a></li></Link>
                     </ul>
                 </nav>
                 <div className='border-t-2 w-3/4 border-dotted'>

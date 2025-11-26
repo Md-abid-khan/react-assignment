@@ -27,6 +27,8 @@ const FinalPage = () => {
     const cancleAppointment = (id) => {
         const cancleItem = appointments.filter(book => book.id !== id);
         setAppointments(cancleItem)
+        // const removedItem = appointments.find(book=> book.id==id);
+        // localStorage.removeItem(`bookMarks${removedItem}`)
     }
 
 
