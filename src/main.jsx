@@ -4,12 +4,14 @@ import './index.css'
 import App from './App.jsx'
 import { RouterProvider } from "react-router/dom";
 import router from './Routes/Routes.jsx';
-import { ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
+    
     <Suspense fallback={<span className="loading loading-bars loading-xl"></span>}>
       <RouterProvider router={router}></RouterProvider>
       <ToastContainer></ToastContainer>

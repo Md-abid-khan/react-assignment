@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../Components/Header/Header';
-import Footer from '../../Components/Footer/Footer';
+
 import { Link } from 'react-router';
 
 
@@ -14,7 +14,7 @@ const Error = () => {
             <p className='text-5xl text-red-600 font-bold'>You Should Go Back</p>
             <Link to={"/"}><button className='btn bg-blue-500 p-5 my-5 '>Go To Home</button></Link>
             </div>
-            <Footer></Footer>
+         
         </div>
     );
 };

@@ -42,12 +42,12 @@ const router = createBrowserRouter([
                 loader: ()=> fetch("Blog.json"),
                 Component: BLog
             },
-            {
-                path: "/contactUs",
-                Component: ContactUs
-            }
         ]
     },
+    {
+        path: "/contactUs",
+        Component: ContactUs
+    }
 ]);
 
 export default router;

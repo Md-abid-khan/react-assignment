@@ -1,8 +1,9 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router';
+import { Link, useLoaderData, useParams } from 'react-router';
 import infoIcon from "../../../DocPic/information.png"
 import iconR from "../../../DocPic/registered.png"
 import { addItemToLS } from "../LocalStorage.js"
+
 
 
 const DoctorDetails = () => {
@@ -71,7 +72,7 @@ const DoctorDetails = () => {
                     </div>
                 </div>
                 <div className='flex flex-col items-center'>
-                    <button className='btn rounded-4xl w-7/8' onClick={() => { handleAppointment(id) }}> Book Appointment Now </button>
+                    <Link to={"/bookmarks"} className='w-7/8'><button className='btn rounded-4xl w-full' onClick={() => { handleAppointment(id) }}> Book Appointment Now </button></Link> 
                 </div>
             </div>
         </div>
