@@ -4,7 +4,7 @@ import FbLogo from "../../../DocPic/SM Logo/facebook.png"
 import linkedInLogo from "../../../DocPic/SM Logo/linkedin.png"
 import XLogo from "../../../DocPic/SM Logo/twitter.png"
 import youtubeLogo from "../../../DocPic/SM Logo/youtube.png"
-import { Link, NavLink } from 'react-router';
+import { Link } from 'react-router';
 
 const Footer = () => {
      const [active , setActive] = useState('');
@@ -34,7 +34,8 @@ const Footer = () => {
                         <a href='https://www.facebook.com/' target='_blank'><img className='h-10' src={FbLogo} alt="facebook Logo" /></a>
                         <a href='https://x.com/' target='_blank'><img className='h-10' src={XLogo} alt="X logo" /> </a>
                         
-                        <a href='https://www.youtube.com/' target='_blank'><img className='h-10' src={youtubeLogo} alt="Youtube Loge" /></a>
+                        <a href='https://www.youtube.com/' target='_blank'><img className='h-10' src={youtubeLogo} alt="Youtube Logo" /></a>
+                        <a href='https://www.linkedin.com/' target='_blank'><img className='h-10' src={linkedInLogo} alt="LinkedIn Logo" /></a>
                     </div>
                 </nav>
 

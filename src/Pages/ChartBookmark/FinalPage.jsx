@@ -5,62 +5,32 @@ import { Link, useLoaderData } from 'react-router';
 import { getItemFromLS } from '../LocalStorage';
 import Bookings from '../../Components/Booking/Bookings';
 import Chart from '../../Components/Charts/Chart';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const FinalPage = () => {
-    // const {id}  = useParams();
-    // console.log(id); 
     const [appointments, setAppointments] = useState([]);
 
     const data = useLoaderData();
-    // console.log(data ) ;
     const notified = (msg) => toast(msg);
 
     useEffect(() => {
         const LsItems = getItemFromLS();
-        // console.log(LsItems);
         const ConvertedData = LsItems.map(item => parseInt(item))
-        // console.log(ConvertedData);
         const selectedItems = data.filter(d => ConvertedData.includes(d.id));
-        // console.log(selectedItems);
-
         setAppointments(selectedItems);
     }, [])
 
     const cancleAppointment = (id) => {
-        const cancleItem = appointments.filter(book => book.id !== id);
-        setAppointments(cancleItem);
+        const cancelItem = appointments.filter(book => book.id !== id);
+        setAppointments(cancelItem);
         notified(`Appointment Cancel`);
-        // <ToastContainer />
-        const removedItem = appointments.find(book=> book.id==id);
-        console.log(removedItem.id);
-
         const StoredItem = localStorage.getItem("bookMarks")
-        console.log(StoredItem);
-
         const storedItemParse = JSON.parse(StoredItem);
-        console.log(storedItemParse);
-
         const particularStoredItems = storedItemParse.find(item => item == id)
-        console.log(particularStoredItems);
-
-        // localStorage.removeItem("particularStoredItems")
-
         const removedId = storedItemParse.filter(book => book !== particularStoredItems);
-        console.log(removedId); 
-        const stringyRemoveId = JSON.stringify(removedId) 
-
-        localStorage.setItem("bookMarks",stringyRemoveId)
-
-
-
-        // localStorage.removeItem(`bookMarks${removedItem}`)
+        const stringyRemoveId = JSON.stringify(removedId)
+        localStorage.setItem("bookMarks", stringyRemoveId)
     }
-
-
-
-
-
 
 
     if (appointments.length === 0) {
@@ -71,32 +41,24 @@ const FinalPage = () => {
             </p>
             <button className='btn bg-blue-600'>  <Link to={"/"}> Book An Appointment </Link>  </button>
         </div>]
-
-
     }
 
 
     return (
         <div>
-            {/* <Charts></Charts> */}
             <div className='flex flex-col items-center bg-white mx-60 p-10 rounded-2xl'>
                 <Chart appointments={appointments}></Chart>
             </div>
-
-
             <div>
                 <div className='flex flex-col items-center'>
                     <h1 className='mt-10 font-bold text-2xl'>My Today Appointments</h1>
                     <p className='my-5'>Our platform connects you with verified, experienced doctors across various specialties — all at your convenience.</p>
-                    {/* {appointments.length} */}
                     <div>
-
-                    <div className='flex flex-col items-center gap-10 p-5 m-5 ' >
-                        {
-                            appointments.map(bookmark => <Bookings cancleAppointment={cancleAppointment} bookmark={bookmark}></Bookings>)
-                        }
-                    </div>
-                        {/* <ToastContainer /> */}
+                        <div className='flex flex-col items-center gap-10 p-5 m-5 ' >
+                            {
+                                appointments.map(bookmark => <Bookings cancleAppointment={cancleAppointment} bookmark={bookmark}></Bookings>)
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

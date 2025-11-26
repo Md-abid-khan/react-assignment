@@ -7,26 +7,22 @@ import { addItemToLS } from "../LocalStorage.js"
 
 const DoctorDetails = () => {
     const data = useLoaderData();
-    // console.log(data);
     const { id } = useParams();
     const parseId = parseInt(id);
     const selectedDoctor = data.find(d => d.id === parseId)
-
 
     const handleAppointment = (id) => {
         addItemToLS(id)
 
     };
 
-    
-
 
     return (
         <div>
             {/* {data.length} */}
-            <div className='my-10 bg-white mx-10 py-10 rounded-2xl flex flex-col items-center'>
-                <h1 className='font-bold mb-2'>Doctor’s Profile Details</h1>
-                <p className='text-center'>Lorem ipsum dolor sit amet consectetur. Sit enim blandit orci tortor amet ut. Suscipit sed est fermentum magna. Quis vitae tempus <br /> facilisis turpis imperdiet mattis donec dignissim volutpat.</p>
+            <div className='my-10 bg-white mx-10 py-10 rounded-2xl flex flex-col items-center gap-5'>
+                <h1 className='text-3xl font-bold mb-2'>Doctor’s Profile Details</h1>
+                <p className='text-center mx-30'>{selectedDoctor.details}</p>
             </div>
             <div className='my-10 bg-white mx-10 py-10 rounded-2xl flex justify-start gap-5 '>
                 <div>
@@ -43,26 +39,22 @@ const DoctorDetails = () => {
                     </div>
                     <div className='flex flex-col gap-3 my-5'>
                         <div className='border-t-2 border-dotted'></div>
-                    <p> <p className='flex gap-2 items-center'> <img src={iconR} alt="IconR" className='h-5' /> {selectedDoctor.registrationNumber}</p></p>
+                    <p className='flex gap-2 items-center'> <img src={iconR} alt="IconR" className='h-5' /> {selectedDoctor.registrationNumber}</p>
                     <div className='border-t-2 border-dotted '></div>
                     </div>
                     <div className='flex gap-2 '>
                         <p className='font-bold'>Ability :</p>
                         <div className=''> {selectedDoctor.availabity.map(ab => ab)}</div>
-
                     </div>
-                    <div > <span className='font-bold'> Consultation Fee: </span>  <span className='text-blue-800'>Taka : {selectedDoctor.fee}</span> (incl. Vat) <span className='text-blue-400'>perconsuitation
+                    <div > <span className='font-bold'> Consultation Fee: </span>  <span className='text-blue-800'>Taka : {selectedDoctor.fee}</span> (incl. Vat) <span className='text-blue-500'>perconsuitation
                     </span> </div>
                 </div>
-
             </div>
             <div className='my-10 bg-white mx-10 py-10 rounded-2xl ' >
                 <div className='flex flex-col items-center'>
                     <div>
-
                     </div>
                     <h1 className='font-bold text-3xl'>Book an Appointment</h1>
-
                 </div>
                 <div className='border-t-2 border-dotted m-5'></div>
                 <div className='flex justify-between px-10'>
@@ -71,7 +63,6 @@ const DoctorDetails = () => {
                 </div>
                 <div className='border-t-2 border-dotted m-5'></div>
                 <div className='px-20'>
-
                     <div className='bg-amber-300 text-amber-700 my-5 flex items-center rounded-2xl '>
                         <img className='h-8' src={infoIcon} alt="" />
                         <small>
@@ -80,16 +71,8 @@ const DoctorDetails = () => {
                     </div>
                 </div>
                 <div className='flex flex-col items-center'>
-
-                    <button className='btn rounded-4xl w-7/8' onClick={() => { handleAppointment(id) }}>
-
-                        Book Appointment Now
-
-                    </button>
-                    {/* <ToastContainer></ToastContainer> */}
+                    <button className='btn rounded-4xl w-7/8' onClick={() => { handleAppointment(id) }}> Book Appointment Now </button>
                 </div>
-
-
             </div>
         </div>
     );

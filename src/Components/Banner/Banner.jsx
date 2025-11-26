@@ -21,7 +21,7 @@ const Banner = () => {
                                     </fieldset>
                                 </div>
                             </div>
-                                <div className='flex justify-center gap-10 mb-15'>
+                                <div className='flex justify-center gap-10 mb-15 my-5'>
                                     <img className='h-60' src={imageBanner} alt="" />
                                     <img className='h-60' src={imageBanner} alt="" />
                                 </div>

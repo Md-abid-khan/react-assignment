@@ -14,25 +14,22 @@ const getItemFromLS = () => {
     }
 }
 
+
 const addItemToLS = (id) => {
     const notified = (msg) => toast(msg);
     const LsItems = getItemFromLS();
     if (LsItems.includes(id)) {
-        // console.log("hi");
         notified("Sorry! You have already booked an appointment with this doctor.")
-        // toast.success('dusi')
     }
     else{
-
         const items = [...LsItems, id];
-    
         const stringyItemToAdd = JSON.stringify(items);
-    
         localStorage.setItem("bookMarks", stringyItemToAdd)
-
         notified("Appointment Added")
     }
 }
+
+
 const removeitemLS = (id)=>{
     const LsItems= getItemFromLS();
     const afterRemove = LsItems.map(i=> i !==id);
