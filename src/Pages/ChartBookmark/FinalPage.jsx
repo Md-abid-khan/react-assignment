@@ -32,7 +32,28 @@ const FinalPage = () => {
         setAppointments(cancleItem);
         notified(`Appointment Cancel`);
         // <ToastContainer />
-        // const removedItem = appointments.find(book=> book.id==id);
+        const removedItem = appointments.find(book=> book.id==id);
+        console.log(removedItem.id);
+
+        const StoredItem = localStorage.getItem("bookMarks")
+        console.log(StoredItem);
+
+        const storedItemParse = JSON.parse(StoredItem);
+        console.log(storedItemParse);
+
+        const particularStoredItems = storedItemParse.find(item => item == id)
+        console.log(particularStoredItems);
+
+        // localStorage.removeItem("particularStoredItems")
+
+        const removedId = storedItemParse.filter(book => book !== particularStoredItems);
+        console.log(removedId); 
+        const stringyRemoveId = JSON.stringify(removedId) 
+
+        localStorage.setItem("bookMarks",stringyRemoveId)
+
+
+
         // localStorage.removeItem(`bookMarks${removedItem}`)
     }
 

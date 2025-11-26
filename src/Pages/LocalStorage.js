@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 
 const getItemFromLS = () => {
     const stringyItemFromLS = localStorage.getItem("bookMarks");
@@ -16,10 +16,11 @@ const getItemFromLS = () => {
 
 const addItemToLS = (id) => {
     const notified = (msg) => toast(msg);
-
     const LsItems = getItemFromLS();
     if (LsItems.includes(id)) {
-        notified("Sorry! You have already booked an appointment.")
+        // console.log("hi");
+        notified("Sorry! You have already booked an appointment with this doctor.")
+        // toast.success('dusi')
     }
     else{
 

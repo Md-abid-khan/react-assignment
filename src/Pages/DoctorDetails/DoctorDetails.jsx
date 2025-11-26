@@ -7,12 +7,13 @@ import { addItemToLS } from "../LocalStorage.js"
 
 const DoctorDetails = () => {
     const data = useLoaderData();
+    // console.log(data);
     const { id } = useParams();
     const parseId = parseInt(id);
     const selectedDoctor = data.find(d => d.id === parseId)
 
 
-    const handleAppoinrment = (id) => {
+    const handleAppointment = (id) => {
         addItemToLS(id)
 
     };
@@ -24,7 +25,6 @@ const DoctorDetails = () => {
         <div>
             {/* {data.length} */}
             <div className='my-10 bg-white mx-10 py-10 rounded-2xl flex flex-col items-center'>
-
                 <h1 className='font-bold mb-2'>Doctor’s Profile Details</h1>
                 <p className='text-center'>Lorem ipsum dolor sit amet consectetur. Sit enim blandit orci tortor amet ut. Suscipit sed est fermentum magna. Quis vitae tempus <br /> facilisis turpis imperdiet mattis donec dignissim volutpat.</p>
             </div>
@@ -33,13 +33,19 @@ const DoctorDetails = () => {
                     <img className='h-90 ml-10' src={selectedDoctor.image} alt="" />
                 </div>
                 <div className='flex flex-col gap-5'>
-                    <h1 className='font-bold text-2xl'>{selectedDoctor.name}</h1>
+                    <div>
+                        <h1 className='font-bold text-2xl my-2'>{selectedDoctor.name}</h1>
                     <p >{selectedDoctor.education}</p>
-                    <p>Working at</p>
+                    </div>
+                    <div>
+                        <p>Working at</p>
                     <p className='font-semibold text=xl'>{selectedDoctor.workingAt}</p>
-                    <div className='border-t-2 border-dotted'></div>
+                    </div>
+                    <div className='flex flex-col gap-3 my-5'>
+                        <div className='border-t-2 border-dotted'></div>
                     <p> <p className='flex gap-2 items-center'> <img src={iconR} alt="IconR" className='h-5' /> {selectedDoctor.registrationNumber}</p></p>
                     <div className='border-t-2 border-dotted '></div>
+                    </div>
                     <div className='flex gap-2 '>
                         <p className='font-bold'>Ability :</p>
                         <div className=''> {selectedDoctor.availabity.map(ab => ab)}</div>
@@ -61,7 +67,7 @@ const DoctorDetails = () => {
                 <div className='border-t-2 border-dotted m-5'></div>
                 <div className='flex justify-between px-10'>
                     <p className='font-bold'>Availability</p>
-                    <p className='bg-green-400 text-green-800 p-2 rounded-2xl'>Doctor Available Today</p>
+                    <p className='bg-green-400 text-green-800 p-2 rounded-2xl px-3'>Doctor Available Today</p>
                 </div>
                 <div className='border-t-2 border-dotted m-5'></div>
                 <div className='px-20'>
@@ -75,12 +81,12 @@ const DoctorDetails = () => {
                 </div>
                 <div className='flex flex-col items-center'>
 
-                    <button className='btn rounded-4xl w-7/8' onClick={() => { handleAppoinrment(id) }}>
+                    <button className='btn rounded-4xl w-7/8' onClick={() => { handleAppointment(id) }}>
 
                         Book Appointment Now
 
                     </button>
-                    <ToastContainer></ToastContainer>
+                    {/* <ToastContainer></ToastContainer> */}
                 </div>
 
 
