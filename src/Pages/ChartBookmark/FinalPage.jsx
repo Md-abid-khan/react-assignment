@@ -10,6 +10,7 @@ const FinalPage = () => {
     // const {id}  = useParams();
     // console.log(id); 
     const [appointments, setAppointments] = useState([]);
+            
     const data = useLoaderData();
     // console.log(data ) ;
 
@@ -30,6 +31,9 @@ const FinalPage = () => {
         // const removedItem = appointments.find(book=> book.id==id);
         // localStorage.removeItem(`bookMarks${removedItem}`)
     }
+
+
+
 
 
 

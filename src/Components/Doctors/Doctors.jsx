@@ -1,9 +1,14 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useState } from 'react';
 import Doctor from './Doctor/Doctor';
 import CountDown from '../CountDown/CountDown';
 
 
 const Doctors = ({data }) => {
+    const [seeMore,setSeeMore] = useState(false);
+
+    const visibleData = seeMore ? data : data.slice(0,6);
+    // console.log(visibleData);
+    // console.log(seeMore);
     return (
         <div>
             <div className='flex flex-col items-center'>
@@ -12,9 +17,16 @@ const Doctors = ({data }) => {
                 <div className=''>
                     <Suspense fallback={<span className="loading loading-bars loading-xl"></span>}>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
-                        {data.map(doctor => <Doctor doctor={doctor}></Doctor>)}
+                        {visibleData.map(doctor => <Doctor doctor={doctor}></Doctor>)}
                     </div>
                     </Suspense>
+                    <div className='flex flex-col items-center m-5'>
+                        {data.length >= 6 && ( <button className='btn bg-blue-600' onClick={() => setSeeMore(!seeMore)}> 
+                            {
+                                seeMore? "Show Less Doctor": "Show All Doctor"  
+                            }
+                             </button> )}
+                    </div>
                 </div>
                 <div>
                     <CountDown></CountDown>

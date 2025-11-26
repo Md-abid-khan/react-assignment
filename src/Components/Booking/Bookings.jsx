@@ -1,7 +1,8 @@
 import React from 'react';
+// import { removeitemLS } from '../../Pages/LocalStorage';
 
 
-const Bookings = ({ bookmark , cancleAppointment}) => {
+const Bookings = ({ bookmark, cancleAppointment }) => {
 
 
     return (
@@ -17,7 +18,13 @@ const Bookings = ({ bookmark , cancleAppointment}) => {
                         Appointment Fee:{bookmark.fee}Taka + VAT
                     </div>
                 </div>
-                <button onClick={()=>{cancleAppointment(bookmark.id)}} className='btn w-8/10 rounded-2xl mb-5 border-2 border-red-300 text-red-500'> Cancle Appointmnent  </button>
+
+                {/* <div onClick={()=> {removeitemLS(bookmark.id)}}>
+
+                    
+                </div> */}
+
+                <button onClick={() => { cancleAppointment(bookmark.id) }} className='btn w-8/10 rounded-2xl mb-5 border-2 border-red-300 text-red-500'> Cancle Appointmnent  </button>
 
 
             </div>
