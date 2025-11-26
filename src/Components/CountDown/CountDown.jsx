@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import doctorImage from "../../../git/B11A08-router-warrior/C001-assets/success-doctor.png"
 import reviewImage from "../../../git/B11A08-router-warrior/C001-assets/success-review.png"
 import patientImage from "../../../git/B11A08-router-warrior/C001-assets/success-patients.png"

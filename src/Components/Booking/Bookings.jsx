@@ -1,10 +1,11 @@
 import React from 'react';
-// import { removeitemLS } from '../../Pages/LocalStorage';
 
+import { ToastContainer, toast } from 'react-toastify';
 
 const Bookings = ({ bookmark, cancleAppointment }) => {
 
-
+    const notified = (msg) => toast(msg);
+    
     return (
         <div className=''>
             <div className='flex flex-col items-center gap-5 bg-white rounded-2xl w-200'>
@@ -18,13 +19,11 @@ const Bookings = ({ bookmark, cancleAppointment }) => {
                         Appointment Fee:{bookmark.fee}Taka + VAT
                     </div>
                 </div>
+                <button onClick={() => { notified(`Appointment Cancel`);  cancleAppointment(bookmark.id) }} className='btn w-8/10 rounded-2xl mb-5 border-2 border-red-300 text-red-500'>
+                    Cancel Appointmnent
+                </button>
+                <ToastContainer />
 
-                {/* <div onClick={()=> {removeitemLS(bookmark.id)}}>
-
-                    
-                </div> */}
-
-                <button onClick={() => { cancleAppointment(bookmark.id) }} className='btn w-8/10 rounded-2xl mb-5 border-2 border-red-300 text-red-500'> Cancle Appointmnent  </button>
 
 
             </div>

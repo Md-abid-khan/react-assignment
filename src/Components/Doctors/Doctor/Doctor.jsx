@@ -4,13 +4,8 @@ import { Link } from 'react-router';
 
 
 const Doctor = ({ doctor }) => {
-    const { button, education, experience, id, image, name, registrationNumber, speciality } = doctor;
+    const { button, education, experience, id, image, name, registrationNumber } = doctor;
 
-    // const [seeMore, setSeeMore] = useState(false);
-
-    // const visibleData = seeMore ? doctor : doctor.slice(0, 6);
-    // console.log(visibleData);
-    // console.log(seeMore);
     return (
         <div className=''>
             <div className="card bg-base-100  shadow-sm rounded-2xl">
@@ -33,7 +28,6 @@ const Doctor = ({ doctor }) => {
                 </div>
                 <Link className='px-5' to={`/doctordetails/${id}`}>
                     <button className="btn w-full rounded-4xl mb-5 ">{button}</button>
-
                 </Link>
             </div>
 

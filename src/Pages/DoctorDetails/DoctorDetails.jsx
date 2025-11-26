@@ -2,7 +2,8 @@ import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
 import infoIcon from "../../../DocPic/information.png"
 import iconR from "../../../DocPic/registered.png"
-import {addItemToLS} from "../LocalStorage.js"
+import { addItemToLS } from "../LocalStorage.js"
+
 
 const DoctorDetails = () => {
     const data = useLoaderData();
@@ -11,11 +12,14 @@ const DoctorDetails = () => {
     const selectedDoctor = data.find(d => d.id === parseId)
 
 
-    const handleAppoinrment = (id)=>{
+    const handleAppoinrment = (id) => {
         addItemToLS(id)
 
-    }
-   ;
+    };
+
+    
+
+
     return (
         <div>
             {/* {data.length} */}
@@ -38,11 +42,11 @@ const DoctorDetails = () => {
                     <div className='border-t-2 border-dotted '></div>
                     <div className='flex gap-2 '>
                         <p className='font-bold'>Ability :</p>
-                            <div className=''> {selectedDoctor.availabity.map(ab => ab  )}</div>
-                        
+                        <div className=''> {selectedDoctor.availabity.map(ab => ab)}</div>
+
                     </div>
                     <div > <span className='font-bold'> Consultation Fee: </span>  <span className='text-blue-800'>Taka : {selectedDoctor.fee}</span> (incl. Vat) <span className='text-blue-400'>perconsuitation
-                        </span> </div>
+                    </span> </div>
                 </div>
 
             </div>
@@ -51,7 +55,7 @@ const DoctorDetails = () => {
                     <div>
 
                     </div>
-                <h1 className='font-bold text-3xl'>Book an Appointment</h1>
+                    <h1 className='font-bold text-3xl'>Book an Appointment</h1>
 
                 </div>
                 <div className='border-t-2 border-dotted m-5'></div>
@@ -71,11 +75,12 @@ const DoctorDetails = () => {
                 </div>
                 <div className='flex flex-col items-center'>
 
-                <button className='btn rounded-4xl w-7/8' onClick={()=>{handleAppoinrment(id)}}>
+                    <button className='btn rounded-4xl w-7/8' onClick={() => { handleAppoinrment(id) }}>
 
-                    Book Appointment Now
+                        Book Appointment Now
 
-                </button>
+                    </button>
+                    <ToastContainer></ToastContainer>
                 </div>
 
 

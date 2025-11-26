@@ -1,3 +1,7 @@
+
+import React from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+
 const getItemFromLS = () => {
     const stringyItemFromLS = localStorage.getItem("bookMarks");
 
@@ -11,10 +15,11 @@ const getItemFromLS = () => {
 }
 
 const addItemToLS = (id) => {
+    const notified = (msg) => toast(msg);
 
     const LsItems = getItemFromLS();
     if (LsItems.includes(id)) {
-        alert("Sorry! You have already marked this book as read.")
+        notified("Sorry! You have already booked an appointment.")
     }
     else{
 
@@ -23,6 +28,8 @@ const addItemToLS = (id) => {
         const stringyItemToAdd = JSON.stringify(items);
     
         localStorage.setItem("bookMarks", stringyItemToAdd)
+
+        notified("Appointment Added")
     }
 }
 const removeitemLS = (id)=>{
