@@ -16,7 +16,6 @@ const DoctorDetails = () => {
 
     };
 
-
     return (
         <div>
             
@@ -52,8 +51,7 @@ const DoctorDetails = () => {
             </div>
             <div className='my-10 bg-white mx-10 py-10 rounded-2xl ' >
                 <div className='flex flex-col items-center'>
-                    <div>
-                    </div>
+                    
                     <h1 className='font-bold text-3xl'>Book an Appointment</h1>
                 </div>
                 <div className='border-t-2 border-dotted m-5'></div>
